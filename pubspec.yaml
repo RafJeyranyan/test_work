@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: ^2.0.15
   webview_flutter: ^4.0.2
   firebase_core: ^2.5.0
+  connectivity_plus: ^3.0.2
 
 
 
