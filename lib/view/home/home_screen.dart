@@ -19,13 +19,13 @@ class HomeScreen extends StatelessWidget {
       builder: (context,state){
         switch (state.stage){
           case HomeScreenStage.loading :
-            return LoadingScreen();
+            return const LoadingScreen();
           case HomeScreenStage.dummy :
-            return DummyScreen();
+            return const DummyScreen();
           case HomeScreenStage.webView:
-            return WebViewScreen();
+            return  WebViewScreen(url: state.url!,);
           case HomeScreenStage.error:
-            return ErrorScreen();
+            return  ErrorScreen(errorMessage: state.errorMessage!,);
         }
 
       },

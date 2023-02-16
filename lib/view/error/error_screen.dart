@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:test_work/core/style.dart';
 
 class ErrorScreen extends StatelessWidget {
-  const ErrorScreen({Key? key}) : super(key: key);
+  const ErrorScreen({Key? key, required this.errorMessage}) : super(key: key);
+  final String errorMessage;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: AppColors.backGround,
+      body: Center(child: Text(errorMessage,style: AppTextStyle.defaultTextStyle,)),
+    );
   }
 }
