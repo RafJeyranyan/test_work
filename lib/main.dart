@@ -1,7 +1,10 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_work/view/home/home_screen.dart';
+import 'package:test_work/view/no_connection/no_connection_screen.dart';
 
 import 'cubits/connection/connection_cubit.dart';
 import 'cubits/connection/connection_state.dart';
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
         //...
       ],
-      child: App(),
+      child: const App(),
     );
   }
 }
@@ -42,26 +45,16 @@ class App extends StatelessWidget {
         builder: (context, child) {
           return BlocListener<InternetCubit, InternetState>(
             listener: (context, state) {
-              print(state.type);
+              if (kDebugMode) {
+                print(state.type);
+              }
               late final Widget page;
               switch (state.type) {
                 case InternetTypes.connected:
-                  page = Scaffold(
-                    body: Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.red,
-                    ),
-                  );
+                  page = const HomeScreen();
                   break;
                 case InternetTypes.offline:
-                  page = Scaffold(
-                    body: Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.greenAccent,
-                    ),
-                  );
+                  page = const NoConnection();
                   break;
                 default:
                   page = const Center(
@@ -75,7 +68,9 @@ class App extends StatelessWidget {
             child: child,
           );
         },
-        home: const Center(child: CircularProgressIndicator(),)
+        home: const Center(
+          child: CircularProgressIndicator(),
+        ),
     );
   }
 }
