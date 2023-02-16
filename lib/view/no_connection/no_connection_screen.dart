@@ -8,7 +8,7 @@ class NoConnection extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.backGround ,
+      backgroundColor: AppColors.background ,
         body:Center(
           child:  Container(
             height: size.height * 0.3,

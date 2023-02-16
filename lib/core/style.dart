@@ -5,8 +5,8 @@ abstract class AppColors{
   static const primary = Colors.black;
   static const contrast = Colors.white;
 
-  static const backGround = Color(0xCDECEFEB);
-  static const content = Color(0x742C2B2B);
+  static const background = Color(0xCDECEFEB);
+  static const content = Color(0x74707070);
 
 }
 
@@ -14,6 +14,10 @@ abstract class AppColors{
 abstract class AppTextStyle{
 
   static const defaultTextStyle = TextStyle(fontSize: 18.0,color: AppColors.primary,fontWeight: FontWeight.w600);
+  static const titleSmall = TextStyle(fontSize: 14.0,color: AppColors.primary,fontWeight: FontWeight.w700);
+  static const titleLarge = TextStyle(fontSize: 18.0,color: AppColors.primary,fontWeight: FontWeight.w600);
+  static const contentSmall = TextStyle(fontSize: 12.0,color: AppColors.primary,fontWeight: FontWeight.w500);
+  static const contentLarge = TextStyle(fontSize: 16.0,color: AppColors.primary,fontWeight: FontWeight.w500);
 }
 
 abstract class AppTheme{

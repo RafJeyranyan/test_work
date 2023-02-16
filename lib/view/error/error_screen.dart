@@ -8,7 +8,7 @@ class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+      backgroundColor: AppColors.background,
       body: Center(child: Text(errorMessage,style: AppTextStyle.defaultTextStyle,)),
     );
   }

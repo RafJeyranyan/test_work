@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_work/core/style.dart';
 import 'package:test_work/cubits/home/home_cubit.dart';
 
+import '../../cubits/home/home_state.dart';
 import '../dummy/dummy_screen.dart';
 import '../error/error_screen.dart';
 import '../loading/loading_screen.dart';
