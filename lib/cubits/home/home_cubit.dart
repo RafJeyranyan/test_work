@@ -21,8 +21,9 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
         emit(state.copyWith(
             stage: HomeScreenStage.error, errorMessage: e.toString()));
       });
-      final isEmu = await _checkIsEmu();
-      if (remoteUrl.isEmpty || isEmu) {
+      // final isEmu = await _checkIsEmu();
+      // if (remoteUrl.isEmpty || isEmu) {
+      if (remoteUrl.isEmpty ) {
         emit(state.copyWith(stage: HomeScreenStage.dummy));
       } else {
         await _setLocalUrl(remoteUrl);
@@ -68,8 +69,11 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   Future<String> _checkForRemote() async {
     try {
       final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
-      await remoteConfig.fetch();
-      await remoteConfig.activate();
+      await remoteConfig.setConfigSettings(RemoteConfigSettings(
+        fetchTimeout: const Duration(minutes: 1),
+        minimumFetchInterval: const Duration(hours: 1),
+      ));
+      await remoteConfig.fetchAndActivate();
       return remoteConfig.getString(urlKey);
     } catch (e) {
       throw e.toString();

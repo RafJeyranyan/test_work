@@ -8,7 +8,7 @@ import 'entities.dart';
 
 part 'client.g.dart';
 
-@RestApi(baseUrl: "https://newsapi.org")
+@RestApi(baseUrl: newsApiBaseUrl)
 abstract class NewsApi {
   factory NewsApi(Dio dio) = _NewsApi;
 

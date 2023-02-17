@@ -22,14 +22,6 @@ class DummyScreenCubit extends Cubit<DummyScreenState> {
 
   }
 
-
-
-
-
-  Future<void> _setLocalUrl(String url) async {
-    final sharedPref = await SharedPreferences.getInstance();
-    sharedPref.setString(urlKey, url);
-  }
 }
 
 

@@ -15,20 +15,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<HomeScreenCubit>
       (create: (_) => HomeScreenCubit(),
-    child: BlocBuilder<HomeScreenCubit, HomeScreenState>(
-      builder: (context,state){
-        switch (state.stage){
-          case HomeScreenStage.loading :
-            return const LoadingScreen();
-          case HomeScreenStage.dummy :
-            return const DummyScreen();
-          case HomeScreenStage.webView:
-            return  WebViewScreen(url: state.url!,);
-          case HomeScreenStage.error:
-            return  ErrorScreen(errorMessage: state.errorMessage!,);
-        }
+      child: BlocBuilder<HomeScreenCubit, HomeScreenState>(
 
-      },
-    ),);
+        builder: (context, state) {
+          switch (state.stage) {
+            case HomeScreenStage.loading :
+              return const LoadingScreen();
+            case HomeScreenStage.dummy :
+              return const DummyScreen();
+            case HomeScreenStage.webView:
+            // Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+            //     builder: (context) => WebViewScreen(url: state.url!,)), (
+            //     route) => false);
+              return WebViewScreen(url: state.url!,);
+            case HomeScreenStage.error:
+              return ErrorScreen(errorMessage: state.errorMessage!,);
+
+          }
+        },
+      ),);
   }
 }

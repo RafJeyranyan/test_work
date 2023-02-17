@@ -12,7 +12,9 @@ class _NewsApi implements NewsApi {
   _NewsApi(
     this._dio, {
     this.baseUrl,
-  });
+  }) {
+    baseUrl ??= 'https://newsapi.org';
+  }
 
   final Dio _dio;
 
@@ -32,7 +34,7 @@ class _NewsApi implements NewsApi {
     )
             .compose(
               _dio.options,
-              'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=457524544e544c3c8b69f93abc6ae9e3',
+              '/v2/top-headlines?country=us&category=sports&apiKey=457524544e544c3c8b69f93abc6ae9e3',
               queryParameters: queryParameters,
               data: _data,
             )
