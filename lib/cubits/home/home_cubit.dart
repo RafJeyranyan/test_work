@@ -11,7 +11,9 @@ import 'home_state.dart';
 class HomeScreenCubit extends Cubit<HomeScreenState> {
   HomeScreenCubit()
       : super(const HomeScreenState(stage: HomeScreenStage.loading)) {
+
     load();
+
   }
 
   Future<void> load() async {
@@ -21,9 +23,9 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
         emit(state.copyWith(
             stage: HomeScreenStage.error, errorMessage: e.toString()));
       });
-      // final isEmu = await _checkIsEmu();
-      // if (remoteUrl.isEmpty || isEmu) {
-      if (remoteUrl.isEmpty ) {
+      final isEmu = await _checkIsEmu();
+      if (remoteUrl.isEmpty || isEmu) {
+      // if (remoteUrl.isEmpty ) {
         emit(state.copyWith(stage: HomeScreenStage.dummy));
       } else {
         await _setLocalUrl(remoteUrl);
@@ -33,6 +35,12 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
       emit(state.copyWith(stage: HomeScreenStage.webView, url: url));
     }
   }
+
+  // _clearLocalUri() async{
+  //   final sharedPref = await SharedPreferences.getInstance();
+  //   await sharedPref.remove(urlKey);
+  //   print(sharedPref.getString(urlKey));
+  // }
 
   Future<bool> _checkIsEmu() async {
     final deviceInfoPlugin = DeviceInfoPlugin();
@@ -71,7 +79,7 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
       final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
       await remoteConfig.setConfigSettings(RemoteConfigSettings(
         fetchTimeout: const Duration(minutes: 1),
-        minimumFetchInterval: const Duration(hours: 1),
+        minimumFetchInterval: const Duration(minutes: 5),
       ));
       await remoteConfig.fetchAndActivate();
       return remoteConfig.getString(urlKey);
