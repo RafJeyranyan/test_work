@@ -14,11 +14,11 @@ class ArticleCard extends StatelessWidget {
     return OrientationBuilder(
       builder: (context,orientation){
         return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              width:  size.width * 0.4 ,
+              width:  size.width * 0.35 ,
               height: orientation == Orientation.portrait ? size.height * 0.15 :size.height * 0.4,
               child: article.urlToImage != null
                   ? Image.network(
