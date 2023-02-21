@@ -11,9 +11,7 @@ import 'home_state.dart';
 class HomeScreenCubit extends Cubit<HomeScreenState> {
   HomeScreenCubit()
       : super(const HomeScreenState(stage: HomeScreenStage.loading)) {
-
     load();
-
   }
 
   Future<void> load() async {
@@ -99,5 +97,3 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
     sharedPref.setString(urlKey, url);
   }
 }
-
-

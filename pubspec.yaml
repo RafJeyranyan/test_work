@@ -62,13 +62,13 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "FFFFFF"
-  image: "assets/icon/icon1.png"
+  image: "assets/icon/Logo_small.png"
 
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/icon1.png"
+  image_path: "assets/icon/Logo_small.png"
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

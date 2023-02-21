@@ -28,6 +28,9 @@ class ArticleScreen extends StatelessWidget {
             Image.network(
               article.urlToImage ?? "",
               fit: BoxFit.fill,
+                errorBuilder: (context,object,stacktrace){
+                  return SizedBox();
+                }
             ),
             const SizedBox(
               height: 16.0,

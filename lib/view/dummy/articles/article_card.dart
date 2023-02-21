@@ -24,6 +24,9 @@ class ArticleCard extends StatelessWidget {
                   ? Image.network(
                 article.urlToImage!,
                 fit: BoxFit.contain,
+                errorBuilder: (context,object,stacktrace){
+                  return SizedBox();
+                },
               )
                   : const SizedBox(),
             ),

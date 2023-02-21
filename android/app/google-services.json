@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "939922592278",
-    "project_id": "test-work-3982d",
-    "storage_bucket": "test-work-3982d.appspot.com"
+    "project_number": "362535213331",
+    "project_id": "rafdze-ec39b",
+    "storage_bucket": "rafdze-ec39b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:939922592278:android:6e8d414efb7bb771a71b37",
+        "mobilesdk_app_id": "1:362535213331:android:109100cfe94068c43422e6",
         "android_client_info": {
-          "package_name": "com.example.test_work"
+          "package_name": "fom.bet.fonbet.bk.stlop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "939922592278-vochsqt0kdfnorpijvsvcqv23361gpbl.apps.googleusercontent.com",
+          "client_id": "362535213331-p612urgj1ke7ppfve3iigjofqj00oef1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDe2KzadFPMwmdZIqwdlvCw22mLLiMNu7M"
+          "current_key": "AIzaSyD529abhgu-9zaG_pSklBamNshl_dUFpG4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "939922592278-vochsqt0kdfnorpijvsvcqv23361gpbl.apps.googleusercontent.com",
+              "client_id": "362535213331-p612urgj1ke7ppfve3iigjofqj00oef1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
