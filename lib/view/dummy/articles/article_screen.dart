@@ -72,36 +72,7 @@ class ArticleScreen extends StatelessWidget {
                       article.content?.split("[")[0] ?? "",
                       style: AppTextStyle.contentLarge,
                     ),
-                    const SizedBox(
-                      height: 16.0,
-                    ),
-                    if (article.url != null)
-                      TextButton(
-                        onPressed: () async {
-                          controller.loadRequest(Uri.parse(article.url!));
-                          controller.setJavaScriptMode(JavaScriptMode.unrestricted);
-                          showCupertinoModalPopup(
-                              context: context,
-                              builder: (builder){
-                                return SafeArea(
-                                  child: SizedBox(
-                                    height: MediaQuery.of(context).size.height * 0.8,
-                                    child: WebViewWidget(
-                                      // gestureRecognizers: Set<Factory<VerticalDragGestureRecognizer>>(),
-                                      controller: controller,
-                                    ),
-                                  ),
-                                );
-                          });
 
-                        },
-                        child: Text(
-                          article.url ?? "",
-                          style: const TextStyle(
-                              color: Colors.blue,
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
                   ],
                 ),
               ),
